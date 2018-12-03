@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Main_Page
+namespace Egkyklopaideia
 {
     static class Program
     {
