@@ -43,7 +43,7 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.myArticleTextDisplay1 = new Egkyklopaideia.ArticleTextDisplay();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.firstCustomControl1 = new Egkyklopaideia.FirstCustomControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -241,14 +241,18 @@
             this.button13.TabIndex = 4;
             this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // myArticleTextDisplay1
+            // webBrowser1
             // 
-            this.myArticleTextDisplay1.Location = new System.Drawing.Point(208, 61);
-            this.myArticleTextDisplay1.Name = "myArticleTextDisplay1";
-            this.myArticleTextDisplay1.Size = new System.Drawing.Size(818, 510);
-            this.myArticleTextDisplay1.TabIndex = 6;
-            this.myArticleTextDisplay1.Load += new System.EventHandler(this.myArticleTextDisplay1_Load);
+            this.webBrowser1.Location = new System.Drawing.Point(209, 61);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScriptErrorsSuppressed = true;
+            this.webBrowser1.ScrollBarsEnabled = false;
+            this.webBrowser1.Size = new System.Drawing.Size(817, 488);
+            this.webBrowser1.TabIndex = 7;
+            this.webBrowser1.Url = new System.Uri("https://www.w3schools.com/w3css/tryw3css_templates_band.htm", System.UriKind.Absolute);
             // 
             // firstCustomControl1
             // 
@@ -262,7 +266,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 583);
-            this.Controls.Add(this.myArticleTextDisplay1);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.firstCustomControl1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button13);
@@ -300,7 +304,7 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private FirstCustomControl firstCustomControl1;
-        private ArticleTextDisplay myArticleTextDisplay1;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
 
