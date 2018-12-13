@@ -44,6 +44,8 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.TtsRead = new System.Windows.Forms.Button();
+            this.TtsStop = new System.Windows.Forms.Button();
             this.firstCustomControl1 = new Egkyklopaideia.FirstCustomControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +53,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.TtsStop);
             this.panel1.Controls.Add(this.SidePanel);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button14);
@@ -211,6 +214,7 @@
             this.button11.TabIndex = 4;
             this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -245,14 +249,35 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(209, 61);
+            this.webBrowser1.Location = new System.Drawing.Point(209, 52);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.ScrollBarsEnabled = false;
-            this.webBrowser1.Size = new System.Drawing.Size(817, 488);
+            this.webBrowser1.Size = new System.Drawing.Size(817, 519);
             this.webBrowser1.TabIndex = 7;
             this.webBrowser1.Url = new System.Uri("https://www.w3schools.com/w3css/tryw3css_templates_band.htm", System.UriKind.Absolute);
+            this.webBrowser1.Visible = false;
+            // 
+            // TtsRead
+            // 
+            this.TtsRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TtsRead.Location = new System.Drawing.Point(35, 508);
+            this.TtsRead.Name = "TtsRead";
+            this.TtsRead.Size = new System.Drawing.Size(75, 23);
+            this.TtsRead.TabIndex = 8;
+            this.TtsRead.Text = "Play";
+            this.TtsRead.UseVisualStyleBackColor = true;
+            this.TtsRead.Click += new System.EventHandler(this.TtsRead_Click);
+            // 
+            // TtsStop
+            // 
+            this.TtsStop.Location = new System.Drawing.Point(116, 508);
+            this.TtsStop.Name = "TtsStop";
+            this.TtsStop.Size = new System.Drawing.Size(75, 23);
+            this.TtsStop.TabIndex = 9;
+            this.TtsStop.Text = "Stop";
+            this.TtsStop.UseVisualStyleBackColor = true;
+            this.TtsStop.Click += new System.EventHandler(this.TtsStop_Click);
             // 
             // firstCustomControl1
             // 
@@ -268,6 +293,7 @@
             this.ClientSize = new System.Drawing.Size(1026, 583);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.firstCustomControl1);
+            this.Controls.Add(this.TtsRead);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
@@ -305,6 +331,8 @@
         private System.Windows.Forms.Button button13;
         private FirstCustomControl firstCustomControl1;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Button TtsRead;
+        private System.Windows.Forms.Button TtsStop;
     }
 }
 

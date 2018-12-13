@@ -13,12 +13,11 @@ namespace Egkyklopaideia
 {
     public partial class Form1 : Form
     {
-       
-        
+        TextToSpeech Reader = new TextToSpeech();
+
         public Form1()
         {
             InitializeComponent();
-           // InitializeChromium();
 
             SidePanel.Height = button1.Height;
             SidePanel.Top = button1.Top;
@@ -31,6 +30,7 @@ namespace Egkyklopaideia
             SidePanel.Height = button1.Height;
             SidePanel.Top = button1.Top;
             webBrowser1.BringToFront();
+            webBrowser1.Visible=true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -38,9 +38,6 @@ namespace Egkyklopaideia
             SidePanel.Height = button2.Height;
             SidePanel.Top = button2.Top;
             firstCustomControl1.BringToFront();
-
-            //Thanks for watching Friends...
-            //Please dont forget to Subscribe... :) :) :) 
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -63,6 +60,22 @@ namespace Egkyklopaideia
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
 
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void TtsRead_Click(object sender, EventArgs e)
+        {
+            Reader.TtsRead("https://baconipsum.com/api/?type=meat-and-filler");
+        }
+
+        private void TtsStop_Click(object sender, EventArgs e)
+        {
+            Reader.TtsStop();
         }
     }
 }
