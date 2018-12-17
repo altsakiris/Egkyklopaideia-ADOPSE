@@ -59,5 +59,15 @@ namespace Egkyklopaideia.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_download_25 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-download-25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

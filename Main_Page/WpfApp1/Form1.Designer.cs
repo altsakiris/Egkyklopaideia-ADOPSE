@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TtsStop = new System.Windows.Forms.Button();
             this.SidePanel = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.button13 = new System.Windows.Forms.Button();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.TtsRead = new System.Windows.Forms.Button();
-            this.TtsStop = new System.Windows.Forms.Button();
             this.firstCustomControl1 = new Egkyklopaideia.FirstCustomControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +64,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(209, 583);
             this.panel1.TabIndex = 0;
+            // 
+            // TtsStop
+            // 
+            this.TtsStop.Location = new System.Drawing.Point(116, 508);
+            this.TtsStop.Name = "TtsStop";
+            this.TtsStop.Size = new System.Drawing.Size(75, 23);
+            this.TtsStop.TabIndex = 9;
+            this.TtsStop.Text = "Stop";
+            this.TtsStop.UseVisualStyleBackColor = true;
+            this.TtsStop.Click += new System.EventHandler(this.TtsStop_Click);
             // 
             // SidePanel
             // 
@@ -164,6 +174,7 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Image = global::Egkyklopaideia.Properties.Resources.icons8_download_25;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.Location = new System.Drawing.Point(677, 20);
             this.button8.Name = "button8";
@@ -178,6 +189,7 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.Location = new System.Drawing.Point(719, 20);
             this.button9.Name = "button9";
@@ -192,6 +204,7 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.Location = new System.Drawing.Point(761, 20);
             this.button10.Name = "button10";
@@ -208,7 +221,7 @@
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(890, 19);
+            this.button11.Location = new System.Drawing.Point(817, 20);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(32, 35);
             this.button11.TabIndex = 4;
@@ -224,7 +237,7 @@
             this.button12.ForeColor = System.Drawing.Color.White;
             this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(928, 19);
+            this.button12.Location = new System.Drawing.Point(939, 19);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(32, 35);
             this.button12.TabIndex = 4;
@@ -249,11 +262,11 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(209, 52);
+            this.webBrowser1.Location = new System.Drawing.Point(209, 59);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(817, 519);
+            this.webBrowser1.Size = new System.Drawing.Size(817, 512);
             this.webBrowser1.TabIndex = 7;
             this.webBrowser1.Url = new System.Uri("https://www.w3schools.com/w3css/tryw3css_templates_band.htm", System.UriKind.Absolute);
             this.webBrowser1.Visible = false;
@@ -268,16 +281,6 @@
             this.TtsRead.Text = "Play";
             this.TtsRead.UseVisualStyleBackColor = true;
             this.TtsRead.Click += new System.EventHandler(this.TtsRead_Click);
-            // 
-            // TtsStop
-            // 
-            this.TtsStop.Location = new System.Drawing.Point(116, 508);
-            this.TtsStop.Name = "TtsStop";
-            this.TtsStop.Size = new System.Drawing.Size(75, 23);
-            this.TtsStop.TabIndex = 9;
-            this.TtsStop.Text = "Stop";
-            this.TtsStop.UseVisualStyleBackColor = true;
-            this.TtsStop.Click += new System.EventHandler(this.TtsStop_Click);
             // 
             // firstCustomControl1
             // 
