@@ -70,7 +70,7 @@ namespace Egkyklopaideia
 
         private void TtsRead_Click(object sender, EventArgs e)
         {
-            Reader.TtsRead("https://baconipsum.com/api/?type=meat-and-filler");
+            Reader.TtsRead("https://users.it.teithe.gr/~it154474/article.html");
         }
 
         private void TtsStop_Click(object sender, EventArgs e)

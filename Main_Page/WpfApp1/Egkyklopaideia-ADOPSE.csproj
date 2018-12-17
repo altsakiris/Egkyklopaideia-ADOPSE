@@ -98,6 +98,7 @@
     <Compile Include="AboutPopUp.Designer.cs">
       <DependentUpon>AboutPopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubstringExtensions.cs" />
     <Compile Include="TextToSpeech.cs" />
     <EmbeddedResource Include="FirstCustomControl.resx">
       <DependentUpon>FirstCustomControl.cs</DependentUpon>

@@ -21,6 +21,7 @@ namespace Egkyklopaideia
             HttpResponseMessage response = await client.GetAsync(es);
             response.EnsureSuccessStatusCode();
             string responseBody = await response.Content.ReadAsStringAsync();
+            responseBody=responseBody.Between("<article>", "</article>");
 
             p =new Prompt(responseBody);
 

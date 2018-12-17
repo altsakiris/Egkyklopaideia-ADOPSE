@@ -255,7 +255,7 @@
             this.webBrowser1.ScriptErrorsSuppressed = true;
             this.webBrowser1.Size = new System.Drawing.Size(817, 519);
             this.webBrowser1.TabIndex = 7;
-            this.webBrowser1.Url = new System.Uri("https://www.w3schools.com/w3css/tryw3css_templates_band.htm", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("https://users.it.teithe.gr/~it154474/article.html", System.UriKind.Absolute);
             this.webBrowser1.Visible = false;
             // 
             // TtsRead
