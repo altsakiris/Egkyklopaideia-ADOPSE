@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.JsonHandle = new System.Windows.Forms.Button();
             this.TtsStop = new System.Windows.Forms.Button();
             this.SidePanel = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -44,10 +45,9 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.TtsRead = new System.Windows.Forms.Button();
             this.firstCustomControl1 = new Egkyklopaideia.FirstCustomControl();
-            this.JsonHandle = new System.Windows.Forms.Button();
+            this.articleTextDisplay1 = new Egkyklopaideia.ArticleTextDisplay();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(209, 583);
             this.panel1.TabIndex = 0;
+            // 
+            // JsonHandle
+            // 
+            this.JsonHandle.Location = new System.Drawing.Point(35, 437);
+            this.JsonHandle.Name = "JsonHandle";
+            this.JsonHandle.Size = new System.Drawing.Size(75, 23);
+            this.JsonHandle.TabIndex = 10;
+            this.JsonHandle.Text = "Json";
+            this.JsonHandle.UseVisualStyleBackColor = true;
+            this.JsonHandle.Click += new System.EventHandler(this.JsonHandle_Click);
             // 
             // TtsStop
             // 
@@ -262,17 +272,6 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(209, 59);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(817, 512);
-            this.webBrowser1.TabIndex = 7;
-            this.webBrowser1.Url = new System.Uri("https://users.it.teithe.gr/~it154474/article.html", System.UriKind.Absolute);
-            this.webBrowser1.Visible = false;
-            // 
             // TtsRead
             // 
             this.TtsRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -286,27 +285,25 @@
             // 
             // firstCustomControl1
             // 
-            this.firstCustomControl1.Location = new System.Drawing.Point(209, 156);
+            this.firstCustomControl1.Location = new System.Drawing.Point(209, 63);
             this.firstCustomControl1.Name = "firstCustomControl1";
-            this.firstCustomControl1.Size = new System.Drawing.Size(805, 423);
+            this.firstCustomControl1.Size = new System.Drawing.Size(817, 520);
             this.firstCustomControl1.TabIndex = 5;
             // 
-            // JsonHandle
+            // articleTextDisplay1
             // 
-            this.JsonHandle.Location = new System.Drawing.Point(35, 437);
-            this.JsonHandle.Name = "JsonHandle";
-            this.JsonHandle.Size = new System.Drawing.Size(75, 23);
-            this.JsonHandle.TabIndex = 10;
-            this.JsonHandle.Text = "Json";
-            this.JsonHandle.UseVisualStyleBackColor = true;
-            this.JsonHandle.Click += new System.EventHandler(this.JsonHandle_Click);
+            this.articleTextDisplay1.Location = new System.Drawing.Point(209, 57);
+            this.articleTextDisplay1.Name = "articleTextDisplay1";
+            this.articleTextDisplay1.Size = new System.Drawing.Size(817, 494);
+            this.articleTextDisplay1.TabIndex = 9;
+            this.articleTextDisplay1.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 583);
-            this.Controls.Add(this.webBrowser1);
+            this.Controls.Add(this.articleTextDisplay1);
             this.Controls.Add(this.firstCustomControl1);
             this.Controls.Add(this.TtsRead);
             this.Controls.Add(this.label4);
@@ -345,10 +342,10 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private FirstCustomControl firstCustomControl1;
-        private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Button TtsRead;
         private System.Windows.Forms.Button TtsStop;
         private System.Windows.Forms.Button JsonHandle;
+        private ArticleTextDisplay articleTextDisplay1;
     }
 }
 

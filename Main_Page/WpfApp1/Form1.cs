@@ -30,15 +30,16 @@ namespace Egkyklopaideia
         {
             SidePanel.Height = button1.Height;
             SidePanel.Top = button1.Top;
-            webBrowser1.BringToFront();
-            webBrowser1.Visible=true;
+            firstCustomControl1.BringToFront();
+            articleTextDisplay1.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             SidePanel.Height = button2.Height;
             SidePanel.Top = button2.Top;
-            firstCustomControl1.BringToFront();
+            articleTextDisplay1.BringToFront();
+            articleTextDisplay1.Visible = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -88,5 +89,7 @@ namespace Egkyklopaideia
         {
             testing.LoadJson();
         }
+
+     
     }
 }
