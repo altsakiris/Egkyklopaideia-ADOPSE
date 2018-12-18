@@ -47,12 +47,14 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.TtsRead = new System.Windows.Forms.Button();
             this.firstCustomControl1 = new Egkyklopaideia.FirstCustomControl();
+            this.JsonHandle = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.JsonHandle);
             this.panel1.Controls.Add(this.TtsStop);
             this.panel1.Controls.Add(this.SidePanel);
             this.panel1.Controls.Add(this.button3);
@@ -289,6 +291,16 @@
             this.firstCustomControl1.Size = new System.Drawing.Size(805, 423);
             this.firstCustomControl1.TabIndex = 5;
             // 
+            // JsonHandle
+            // 
+            this.JsonHandle.Location = new System.Drawing.Point(35, 437);
+            this.JsonHandle.Name = "JsonHandle";
+            this.JsonHandle.Size = new System.Drawing.Size(75, 23);
+            this.JsonHandle.TabIndex = 10;
+            this.JsonHandle.Text = "Json";
+            this.JsonHandle.UseVisualStyleBackColor = true;
+            this.JsonHandle.Click += new System.EventHandler(this.JsonHandle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,6 +348,7 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Button TtsRead;
         private System.Windows.Forms.Button TtsStop;
+        private System.Windows.Forms.Button JsonHandle;
     }
 }
 

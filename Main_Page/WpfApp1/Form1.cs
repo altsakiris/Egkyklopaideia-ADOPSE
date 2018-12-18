@@ -14,6 +14,7 @@ namespace Egkyklopaideia
     public partial class Form1 : Form
     {
         TextToSpeech Reader = new TextToSpeech();
+        DailyArticleCreator testing = new DailyArticleCreator();
 
         public Form1()
         {
@@ -81,6 +82,11 @@ namespace Egkyklopaideia
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void JsonHandle_Click(object sender, EventArgs e)
+        {
+            testing.LoadJson();
         }
     }
 }
