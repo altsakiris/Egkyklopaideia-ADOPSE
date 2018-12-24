@@ -42,12 +42,12 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.TtsRead = new System.Windows.Forms.Button();
-            this.firstCustomControl1 = new Egkyklopaideia.FirstCustomControl();
+            this.button11 = new System.Windows.Forms.Button();
             this.articleTextDisplay1 = new Egkyklopaideia.ArticleTextDisplay();
+            this.firstCustomControl1 = new Egkyklopaideia.FirstCustomControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -188,12 +188,13 @@
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Image = global::Egkyklopaideia.Properties.Resources.icons8_download_25;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(677, 20);
+            this.button8.Location = new System.Drawing.Point(763, 19);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(36, 34);
             this.button8.TabIndex = 4;
             this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -203,12 +204,13 @@
             this.button9.ForeColor = System.Drawing.Color.White;
             this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(719, 20);
+            this.button9.Location = new System.Drawing.Point(805, 19);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(36, 34);
             this.button9.TabIndex = 4;
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -218,28 +220,13 @@
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(761, 20);
+            this.button10.Location = new System.Drawing.Point(847, 19);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(36, 34);
             this.button10.TabIndex = 4;
             this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(817, 20);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(32, 35);
-            this.button11.TabIndex = 4;
-            this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button12
             // 
@@ -283,12 +270,21 @@
             this.TtsRead.UseVisualStyleBackColor = true;
             this.TtsRead.Click += new System.EventHandler(this.TtsRead_Click);
             // 
-            // firstCustomControl1
+            // button11
             // 
-            this.firstCustomControl1.Location = new System.Drawing.Point(209, 63);
-            this.firstCustomControl1.Name = "firstCustomControl1";
-            this.firstCustomControl1.Size = new System.Drawing.Size(817, 520);
-            this.firstCustomControl1.TabIndex = 5;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button11.Location = new System.Drawing.Point(889, 19);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(32, 35);
+            this.button11.TabIndex = 4;
+            this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // articleTextDisplay1
             // 
@@ -297,6 +293,14 @@
             this.articleTextDisplay1.Size = new System.Drawing.Size(817, 494);
             this.articleTextDisplay1.TabIndex = 9;
             this.articleTextDisplay1.Visible = false;
+            this.articleTextDisplay1.Load += new System.EventHandler(this.articleTextDisplay1_Load);
+            // 
+            // firstCustomControl1
+            // 
+            this.firstCustomControl1.Location = new System.Drawing.Point(209, 63);
+            this.firstCustomControl1.Name = "firstCustomControl1";
+            this.firstCustomControl1.Size = new System.Drawing.Size(817, 520);
+            this.firstCustomControl1.TabIndex = 5;
             // 
             // Form1
             // 
@@ -338,7 +342,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private FirstCustomControl firstCustomControl1;
@@ -346,6 +349,7 @@
         private System.Windows.Forms.Button TtsStop;
         private System.Windows.Forms.Button JsonHandle;
         private ArticleTextDisplay articleTextDisplay1;
+        private System.Windows.Forms.Button button11;
     }
 }
 

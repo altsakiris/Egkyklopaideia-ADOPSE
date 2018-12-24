@@ -71,5 +71,7 @@
 
         private System.Windows.Forms.Label labelText;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        
+        public System.Windows.Forms.WebBrowser get() { return webBrowser1; }
     }
 }
