@@ -61,6 +61,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Upload";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -101,6 +102,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Form2";
             this.Text = "Upload New Article";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
