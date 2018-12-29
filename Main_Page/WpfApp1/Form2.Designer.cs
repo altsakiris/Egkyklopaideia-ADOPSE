@@ -39,13 +39,13 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(37, 49);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(304, 20);
+            this.textBox1.Size = new System.Drawing.Size(240, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(37, 85);
+            this.button1.Location = new System.Drawing.Point(283, 48);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(37, 167);
+            this.button2.Location = new System.Drawing.Point(37, 201);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(92, 23);
             this.button2.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(249, 167);
+            this.button3.Location = new System.Drawing.Point(135, 201);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(92, 23);
             this.button3.TabIndex = 3;
@@ -83,9 +83,9 @@
             "Category 3",
             "Category 4",
             "Category 5"});
-            this.comboBox1.Location = new System.Drawing.Point(387, 48);
+            this.comboBox1.Location = new System.Drawing.Point(425, 48);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(172, 21);
+            this.comboBox1.Size = new System.Drawing.Size(134, 21);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.Text = "Choose Category";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);

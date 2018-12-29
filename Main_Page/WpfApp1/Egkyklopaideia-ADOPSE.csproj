@@ -52,7 +52,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\..\Downloads\MySql.Data.dll</HintPath>
+      <HintPath>Resources\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -72,6 +72,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="loginform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginform.Designer.cs">
+      <DependentUpon>loginform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="registerform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="registerform.Designer.cs">
+      <DependentUpon>registerform.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlConn.cs" />
     <Compile Include="DailyArticleCreator.cs" />
     <Compile Include="FirstCustomControl.cs">
@@ -131,6 +143,9 @@
     <EmbeddedResource Include="HelpPopUp.resx">
       <DependentUpon>HelpPopUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="loginform.resx">
+      <DependentUpon>loginform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -144,6 +159,9 @@
     <EmbeddedResource Include="AboutPopUp.resx">
       <DependentUpon>AboutPopUp.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="registerform.resx">
+      <DependentUpon>registerform.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -205,5 +205,17 @@ namespace Egkyklopaideia
         {
             
         }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            var form = new loginform();
+            form.Show(this);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var form = new registerform();
+            form.Show(this);
+        }
     }
 }
