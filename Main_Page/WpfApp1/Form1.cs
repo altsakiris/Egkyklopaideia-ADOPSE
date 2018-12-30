@@ -22,6 +22,10 @@ namespace Egkyklopaideia
         TextToSpeech Reader = new TextToSpeech();
         DailyArticleCreator testing = new DailyArticleCreator();
 
+        public static Button UploadButton;
+        public static Button LogOutButton;
+        public static Button RegisterButton;
+
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +33,9 @@ namespace Egkyklopaideia
             SidePanel.Height = button1.Height;
             SidePanel.Top = button1.Top;
             firstCustomControl1.BringToFront();
+            UploadButton = button9;
+            LogOutButton = button4;
+            RegisterButton = button5;
         }
 
 
@@ -216,6 +223,14 @@ namespace Egkyklopaideia
         {
             var form = new registerform();
             form.Show(this);
+        }
+
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+            button9.Enabled = false; // me to log out ta ksanakruvw
+            button4.Enabled = false;
+            button5.Enabled = true; //profanes
+            MessageBox.Show("Succesfully Logged-Out!");
         }
     }
 }

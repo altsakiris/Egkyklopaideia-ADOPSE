@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Egkyklopaideia
 {
@@ -36,7 +37,7 @@ namespace Egkyklopaideia
             password = "aiquiE3h@@";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "PORT=" + port + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";" + "Allow User Variables = True";
 
             connection = new MySqlConnection(connectionString);
         }
@@ -75,7 +76,21 @@ namespace Egkyklopaideia
             }
         }
 
+        public bool CloseConnection()
+        {
+            try
+            {
+                connection.Close();
 
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show("Problem Closing");
+                return false;
+            }
+        }
 
         public void UploadArticle()
         {
@@ -99,9 +114,105 @@ namespace Egkyklopaideia
                 cmd.ExecuteNonQuery();
                 Console.WriteLine(readText);
 
-
+                
 
             }
+
+            //close connection
+            this.CloseConnection();
+            
+        }
+
+        public void Register()
+        {
+            string nameVal = registerform.usernameText;
+            string passwordVal = registerform.passwordText;
+            string emailVal = registerform.emailText;
+
+            string query = "INSERT INTO Users (Name,Password,Email) VALUES(@nameValInput,@passwordValInput,@emailValInput)";
+
+            string NameQuery = "SELECT COUNT(*) FROM Users WHERE Name = '"+nameVal+"'";
+            int NameCount = -1;
+
+            string EmailQuery = "SELECT COUNT(*) FROM Users WHERE Email = '" + emailVal + "'";
+            int EmailCount = -1;
+
+            //open connection
+            if (this.OpenConnection() == true)
+            {
+
+
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd2 = new MySqlCommand(NameQuery, connection);
+                MySqlCommand cmd3 = new MySqlCommand(EmailQuery, connection);
+                cmd.Parameters.AddWithValue("@nameValInput", nameVal);
+                cmd.Parameters.AddWithValue("@passwordValInput", passwordVal);
+                cmd.Parameters.AddWithValue("@emailValInput", emailVal);
+
+                NameCount = int.Parse(cmd2.ExecuteScalar() + "");
+                EmailCount = int.Parse(cmd3.ExecuteScalar() + "");
+
+
+                if (NameCount > 0)
+                {
+                    MessageBox.Show("Name Already Exists!..");  //profanes
+
+                }else if(EmailCount > 0)
+
+                {
+                    MessageBox.Show("This Email Is Already Being Used!..");
+                }
+
+                else if(!new EmailAddressAttribute().IsValid(emailVal)) //filter gia swsto email
+                {
+                    MessageBox.Show("Wrong Email Input!..");
+                }
+                else
+                {
+                    //Execute command
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Succesfully Created!");
+                    registerform.success = true;
+
+                }
+
+
+
+                //close connection
+                this.CloseConnection();
+
+            }
+        }
+
+        public void Login()
+        {
+            string nameVal = loginform.usernameText;
+            string passwordVal = loginform.passwordText;
+
+            string query = "SELECT COUNT(*) FROM Users WHERE Name='"+nameVal+"' AND Password='"+passwordVal+"'";
+            int count = -1;
+
+            if (this.OpenConnection() == true)
+            {
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                count = int.Parse(cmd.ExecuteScalar() + ""); // kai auta profanes
+
+                if (count!=1)
+                {
+                    MessageBox.Show("Wrong Name Or Password!..");
+                }
+                else
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Successful Login!");
+                    loginform.successLogin = true;
+                }
+
+                this.CloseConnection();
+            }
+
         }
 
     }

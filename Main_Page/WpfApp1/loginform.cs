@@ -10,8 +10,15 @@ using System.Windows.Forms;
 
 namespace Egkyklopaideia
 {
+
+    
     public partial class loginform : Form
     {
+
+        SqlConn conn = new SqlConn();
+        public static string usernameText;
+        public static string passwordText;
+        public static bool successLogin = false;
         public loginform()
         {
             InitializeComponent();
@@ -24,8 +31,20 @@ namespace Egkyklopaideia
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // eisodos tou xrhsth TO-DO
-            this.Close();
+            usernameText = textBox1.Text;
+            passwordText = textBox2.Text;
+            conn.Login();
+
+            if (successLogin == true)  //to ekana ama einai epituxeis na kleinei
+            {
+                this.Close();
+                Form1.UploadButton.Enabled = true; //enable ta buttonia
+                Form1.LogOutButton.Enabled = true;
+                Form1.RegisterButton.Enabled = false; //auto disable
+
+            }
+            
+          
         }
     }
 }

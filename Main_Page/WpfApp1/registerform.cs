@@ -12,6 +12,13 @@ namespace Egkyklopaideia
 {
     public partial class registerform : Form
     {
+
+        SqlConn conn = new SqlConn();
+        public static string usernameText;
+        public static string passwordText;
+        public static string emailText;
+        public static bool success = false;
+
         public registerform()
         {
             InitializeComponent();
@@ -24,8 +31,15 @@ namespace Egkyklopaideia
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // eggrafh xrhsth TO-DO
-            this.Close();
+            usernameText = textBox1.Text;
+            passwordText = textBox2.Text;
+            emailText = textBox3.Text;
+            conn.Register();
+
+            if (success == true) //to ekana ama einai epituxeis na kleinei
+            {
+                this.Close();
+            }
         }
     }
 }
