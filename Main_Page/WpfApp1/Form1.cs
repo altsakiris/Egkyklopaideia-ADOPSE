@@ -25,6 +25,7 @@ namespace Egkyklopaideia
         public static Button UploadButton;
         public static Button LogOutButton;
         public static Button RegisterButton;
+        public static Button LoginButton;
 
         public Form1()
         {
@@ -36,6 +37,7 @@ namespace Egkyklopaideia
             UploadButton = button9;
             LogOutButton = button4;
             RegisterButton = button5;
+            LoginButton = login_btn;
         }
 
 
@@ -230,6 +232,7 @@ namespace Egkyklopaideia
             button9.Enabled = false; // me to log out ta ksanakruvw
             button4.Enabled = false;
             button5.Enabled = true; //profanes
+            login_btn.Enabled = true;
             MessageBox.Show("Succesfully Logged-Out!");
         }
     }

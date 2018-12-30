@@ -41,6 +41,7 @@ namespace Egkyklopaideia
                 Form1.UploadButton.Enabled = true; //enable ta buttonia
                 Form1.LogOutButton.Enabled = true;
                 Form1.RegisterButton.Enabled = false; //auto disable
+                Form1.LoginButton.Enabled = false;
 
             }
             
