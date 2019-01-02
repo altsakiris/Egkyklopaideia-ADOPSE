@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Speech.Synthesis;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using HtmlAgilityPack;
 using System.Threading.Tasks;
 
 namespace Egkyklopaideia
@@ -21,9 +22,16 @@ namespace Egkyklopaideia
             HttpResponseMessage response = await client.GetAsync(es);
             response.EnsureSuccessStatusCode();
             string responseBody = await response.Content.ReadAsStringAsync();
-            responseBody=responseBody.Between("<article>", "</article>");
+            var htmlDoc = new HtmlDocument();
+            htmlDoc.LoadHtml(responseBody);
+            var htmlNodes = htmlDoc.DocumentNode.SelectNodes("//*[@id=\"readable\"]");
+            string readable = "";
+            foreach (var node in htmlNodes)
+            {
+                readable += node.InnerText;
+            }
 
-            p =new Prompt(responseBody);
+            p =new Prompt(readable);
 
            
             synth.SetOutputToDefaultAudioDevice();
