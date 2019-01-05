@@ -179,16 +179,12 @@ namespace Egkyklopaideia
 
         private void button11_Click(object sender, EventArgs e)
         {
-            /*string title =”My First Blog”;
-            string url =”https://dotnetgeekblog.wordpress.com/&#8221;;
-            string summery =”This Is First Geek Blog”;
-            string image =”http://s.wordpress.org/about/images/logos/wordpress-logo-stacked-rgb.png&#8221;;
+            System.Windows.Forms.WebBrowser article = articleTextDisplay1.get();
+            string article2 = article.Document.Body.InnerText;
+            Clipboard.SetText(article2);
+            var form = new Form3();
+            form.Show(this);
 
-            string facebooklink = “http://www.facebook.com/sharer.php?s=100&amp;p%5Btitle%5D=”+title;
-            facebooklink += “&amp; p[summary] =”+summery;
-            facebooklink += “&amp; p[url] =” +url;
-            facebooklink += “&amp; &p[images][0] =” +image;
-            lnkFacebook.HRef = facebooklink;*/
         }
 
         private void TtsRead_Click(object sender, EventArgs e)
