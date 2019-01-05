@@ -78,11 +78,11 @@
             this.comboBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Category 1",
-            "Category 2",
-            "Category 3",
-            "Category 4",
-            "Category 5"});
+            "Sports",
+            "Science",
+            "Music",
+            "Tech",
+            "Culture"});
             this.comboBox1.Location = new System.Drawing.Point(425, 48);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(134, 21);
