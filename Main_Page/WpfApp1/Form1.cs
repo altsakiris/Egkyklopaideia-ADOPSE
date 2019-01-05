@@ -74,6 +74,7 @@ namespace Egkyklopaideia
 
         private void button6_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             webBrowser1.Visible = true;
             webBrowser1.BringToFront();
             articleTextDisplay1.Visible = false;
@@ -82,6 +83,7 @@ namespace Egkyklopaideia
             SearchText = textBox1.Text;
             resultView = listBox1;
             conn.Search();
+ 
 
         }
 
@@ -110,6 +112,7 @@ namespace Egkyklopaideia
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             webBrowser1.Visible = true;
             webBrowser1.BringToFront();
             articleTextDisplay1.Visible = false;
