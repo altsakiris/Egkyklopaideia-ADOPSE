@@ -10,10 +10,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Collections;
 using System.Drawing.Printing;
-
-
-
-
+using MySql.Data.MySqlClient;
+using System.Windows.Documents;
 
 namespace Egkyklopaideia
 {
@@ -21,11 +19,19 @@ namespace Egkyklopaideia
     {
         TextToSpeech Reader = new TextToSpeech();
         DailyArticleCreator testing = new DailyArticleCreator();
+        SqlConn conn = new SqlConn();
 
         public static Button UploadButton;
         public static Button LogOutButton;
         public static Button RegisterButton;
         public static Button LoginButton;
+        public static Button SearchButton;
+        public static string SearchText;
+        public static string SelectedIndex;
+        public static ListBox resultView;
+        public static string SelectedArticle;
+        public static string openArticleText;
+        public static string openArticleTitle;
 
         public Form1()
         {
@@ -38,6 +44,9 @@ namespace Egkyklopaideia
             LogOutButton = button4;
             RegisterButton = button5;
             LoginButton = login_btn;
+            SearchButton = button6;
+           
+
         }
 
 
@@ -62,6 +71,92 @@ namespace Egkyklopaideia
             SidePanel.Height = button3.Height;
             SidePanel.Top = button3.Top;
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Visible = true;
+            webBrowser1.BringToFront();
+            articleTextDisplay1.Visible = false;
+            listBox1.BringToFront();
+            button7.BringToFront();
+            SearchText = textBox1.Text;
+            resultView = listBox1;
+            conn.Search();
+
+        }
+
+
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex < 0)
+            {
+                MessageBox.Show("No Articles Selected");
+            }
+            else
+            {
+                string item = listBox1.SelectedItem.ToString();
+                SelectedArticle = item;
+                webBrowser2.Visible = true;
+                webBrowser2.BringToFront();
+                conn.OpenArticle();
+
+                webBrowser2.DocumentText = openArticleText;
+                button15.BringToFront();
+            }
+           
+             
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            webBrowser1.Visible = true;
+            webBrowser1.BringToFront();
+            articleTextDisplay1.Visible = false;
+            listBox1.BringToFront();
+            button7.BringToFront();
+            resultView = listBox1;
+            int selectedIndexCat = comboBox1.SelectedIndex;
+            if (selectedIndexCat == 0)
+            {
+                SelectedIndex = "Sports";
+
+            }
+            else if (selectedIndexCat == 1)
+            {
+                SelectedIndex = "Science";
+
+            }
+            else if (selectedIndexCat == 2)
+            {
+                SelectedIndex = "Tech";
+
+            }
+            else if (selectedIndexCat == 3)
+            {
+                SelectedIndex = "Music";
+
+            }
+            else if (selectedIndexCat == 4)
+            {
+                SelectedIndex = "Culture";
+
+            }
+            conn.CategorySearch();
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            listBox1.BringToFront();
+            button15.SendToBack();
+            webBrowser2.Visible = false;
+        }
+
+
+
+
+
         private void button13_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -235,5 +330,9 @@ namespace Egkyklopaideia
             login_btn.Enabled = true;
             MessageBox.Show("Succesfully Logged-Out!");
         }
+
+        
+
+         
     }
 }

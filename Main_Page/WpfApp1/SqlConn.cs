@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using System.Net;
+using System.Windows.Documents;
 
 namespace Egkyklopaideia
 {
@@ -95,32 +97,29 @@ namespace Egkyklopaideia
         public void UploadArticle()
         {
 
-
-            string readText = File.ReadAllText(Form2.downloadText); //to readText exei ta periexomena tou file 
             string selectedCategory = Form2.selectedIndex; // to string tou category pou tha mpei vash, kai h metavlhth mporei na xrhsimopoiithei kai ws hyperlink gia anazhthsh
+            string title = Form2.articleTitle;
+            string readText = File.ReadAllText(Form2.downloadText);
 
-            
 
-
-            string query = "INSERT INTO Articles (Article,Category) values (@inputArticle,@inputCategory)";
+            string query = "INSERT INTO Articles (Title,Category,Article,Link) values (@inputTitle,@inputCategory,@inputArticle,NULL)";
 
             if (this.OpenConnection() == true)
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
-                cmd.Parameters.AddWithValue("@inputArticle", readText);
+                cmd.Parameters.AddWithValue("@inputTitle", title);
                 cmd.Parameters.AddWithValue("@inputCategory", selectedCategory);
+                cmd.Parameters.AddWithValue("@inputArticle", readText);
 
                 cmd.ExecuteNonQuery();
-                Console.WriteLine(readText);
 
-                
 
             }
 
             //close connection
             this.CloseConnection();
-            
+
         }
 
         public void Register()
@@ -131,7 +130,7 @@ namespace Egkyklopaideia
 
             string query = "INSERT INTO Users (Name,Password,Email) VALUES(@nameValInput,@passwordValInput,@emailValInput)";
 
-            string NameQuery = "SELECT COUNT(*) FROM Users WHERE Name = '"+nameVal+"'";
+            string NameQuery = "SELECT COUNT(*) FROM Users WHERE Name = '" + nameVal + "'";
             int NameCount = -1;
 
             string EmailQuery = "SELECT COUNT(*) FROM Users WHERE Email = '" + emailVal + "'";
@@ -158,13 +157,14 @@ namespace Egkyklopaideia
                 {
                     MessageBox.Show("Name Already Exists!..");  //profanes
 
-                }else if(EmailCount > 0)
+                }
+                else if (EmailCount > 0)
 
                 {
                     MessageBox.Show("This Email Is Already Being Used!..");
                 }
 
-                else if(!new EmailAddressAttribute().IsValid(emailVal)) //filter gia swsto email
+                else if (!new EmailAddressAttribute().IsValid(emailVal)) //filter gia swsto email
                 {
                     MessageBox.Show("Wrong Email Input!..");
                 }
@@ -190,7 +190,7 @@ namespace Egkyklopaideia
             string nameVal = loginform.usernameText;
             string passwordVal = loginform.passwordText;
 
-            string query = "SELECT COUNT(*) FROM Users WHERE Name='"+nameVal+"' AND Password='"+passwordVal+"'";
+            string query = "SELECT COUNT(*) FROM Users WHERE Name='" + nameVal + "' AND Password='" + passwordVal + "'";
             int count = -1;
 
             if (this.OpenConnection() == true)
@@ -199,7 +199,7 @@ namespace Egkyklopaideia
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 count = int.Parse(cmd.ExecuteScalar() + ""); // kai auta profanes
 
-                if (count!=1)
+                if (count != 1)
                 {
                     MessageBox.Show("Wrong Name Or Password!..");
                 }
@@ -215,7 +215,104 @@ namespace Egkyklopaideia
 
         }
 
+        public void Search()
+        {
+            string searchName = Form1.SearchText;
+            string query = "SELECT Title From Articles WHERE Title LIKE @searchString";
+            if (this.OpenConnection() == true)
+            {
+
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    string nameString = "%" + searchName + "%";
+                    cmd.Parameters.AddWithValue("@searchString", nameString);
+
+                    if (searchName == "")
+                    {
+                        MessageBox.Show("No Search Query");
+                    }
+                    else
+                    {
+
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            Form1.resultView.Items.Add(reader["Title"].ToString());
+                        }
+                    }
+
+ 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No results");
+                }
+            }
+
+            this.CloseConnection();
+
+        }
+
+
+        public void CategorySearch()
+        {
+
+            string categorySearch = Form1.SelectedIndex;
+ 
+            string query = "SELECT Title From Articles Where Category =@searchCat";
+
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@searchCat", categorySearch);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Form1.resultView.Items.Add(reader["Title"].ToString());
+
+                }
+            }
+            this.CloseConnection();
+        }
+         
+        public void OpenArticle()
+        {
+            string result = Form1.SelectedArticle;
+            string query = "SELECT Article From Articles WHERE Title =@inputTitle";
+
+            if (this.OpenConnection() == true)
+            {
+
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@inputTitle", result);
+
+                    if (result == null)
+                    {
+                        MessageBox.Show("No Article Selected");
+                    }
+                    else
+                    {
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            Form1.openArticleText= (reader["Article"].ToString());
+                        }
+                    }
+
+                }catch(Exception e)
+                {
+                    MessageBox.Show("??");
+                }
+            }
+            this.CloseConnection();
+        }
+
+
     }
 
-    
+
 }

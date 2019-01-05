@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Egkyklopaideia
 {
@@ -16,6 +17,7 @@ namespace Egkyklopaideia
         SqlConn conn = new SqlConn();
         public static string downloadText;
         public static string selectedIndex;
+        public static string articleTitle;
 
         public Form2()
         {
@@ -36,13 +38,13 @@ namespace Egkyklopaideia
                     System.IO.StreamReader(openFileDialog1.FileName);
                  MessageBox.Show(sr.ReadToEnd());
                  sr.Close();*/
-            using (FileDialog fileDialog = new OpenFileDialog())
+            using (OpenFileDialog fileDialog = new OpenFileDialog())
             {
-                fileDialog.Filter = "txt files (*.txt)|*.txt|html files (*.html)|*.html"; // filter gia arxeia pou dexetai
+                fileDialog.Filter = "html files (*.html)|*.html"; // filter gia arxeia pou dexetai
                 if (DialogResult.OK == fileDialog.ShowDialog())
                 {
                     string filename = fileDialog.FileName;
-
+                    articleTitle = Path.GetFileNameWithoutExtension(filename);
                     textBox1.Text = fileDialog.FileName;
                 }
                 downloadText = textBox1.Text;
@@ -59,32 +61,33 @@ namespace Egkyklopaideia
             int selectedIndexCat = comboBox1.SelectedIndex;
             if (selectedIndexCat == 0)
             {
-                selectedIndex = "Category 1";
+                selectedIndex = "Sports";
                 
             }else if(selectedIndexCat == 1)
             {
-                selectedIndex = "Category 2";
+                selectedIndex = "Science";
 
             }
             else if (selectedIndexCat == 2)
             {
-                selectedIndex = "Category 3";
+                selectedIndex = "Music";
 
             }
             else if (selectedIndexCat == 3)
             {
-                selectedIndex = "Category 4";
+                selectedIndex = "Tech";
 
             }
             else if (selectedIndexCat == 4)
             {
-                selectedIndex = "Category 5";
+                selectedIndex = "Culture";
 
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+          
             conn.UploadArticle(); //methodo gia upload
              
              
