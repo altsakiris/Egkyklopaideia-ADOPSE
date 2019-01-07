@@ -61,8 +61,11 @@ namespace Egkyklopaideia
         {
             SidePanel.Height = button2.Height;
             SidePanel.Top = button2.Top;
-            articleTextDisplay1.BringToFront();
-            articleTextDisplay1.Visible = true;
+            button8.Visible = true;
+            button8.BringToFront();
+            webBrowser2.BringToFront();
+            webBrowser2.Visible = true;
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
