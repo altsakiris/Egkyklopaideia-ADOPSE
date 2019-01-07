@@ -156,7 +156,7 @@ namespace Egkyklopaideia
 
         private void button11_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.WebBrowser article = articleTextDisplay1.get();
+            System.Windows.Forms.WebBrowser article = webBrowser2;
             string article2 = article.Document.Body.InnerText;
             Clipboard.SetText(article2);
             var form = new Form3();
@@ -193,7 +193,7 @@ namespace Egkyklopaideia
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "Text File|*.txt|Html File|*.html";
             saveFileDialog1.Title = "Save an Image File";
-            System.Windows.Forms.WebBrowser article = articleTextDisplay1.get();
+            System.Windows.Forms.WebBrowser article = webBrowser2;
             string article2 = article.Document.Body.InnerText;
             saveFileDialog1.ShowDialog();
 
@@ -229,7 +229,7 @@ namespace Egkyklopaideia
         {
 
             PrintDialog printdialog1 = new PrintDialog();
-            System.Windows.Forms.WebBrowser article = articleTextDisplay1.get();
+            System.Windows.Forms.WebBrowser article = webBrowser2;
 
             //new PrintingExample(article.Document.Body.InnerText);
 
@@ -306,5 +306,12 @@ namespace Egkyklopaideia
             login_btn.Enabled = true;
             MessageBox.Show("Succesfully Logged-Out!");
         }
+
+
+        private void webBrowser2_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+
     }
 }

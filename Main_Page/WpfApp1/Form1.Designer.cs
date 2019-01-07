@@ -428,6 +428,7 @@
             this.webBrowser2.Size = new System.Drawing.Size(817, 479);
             this.webBrowser2.TabIndex = 16;
             this.webBrowser2.Visible = false;
+            this.webBrowser2.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser2_DocumentCompleted);
             // 
             // button15
             // 
