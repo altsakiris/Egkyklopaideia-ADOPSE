@@ -45,8 +45,7 @@ namespace Egkyklopaideia
             RegisterButton = button5;
             LoginButton = login_btn;
             SearchButton = button6;
-           
-
+            label1.Text = DateTime.Now.ToShortDateString();
         }
 
 
@@ -329,9 +328,5 @@ namespace Egkyklopaideia
             login_btn.Enabled = true;
             MessageBox.Show("Succesfully Logged-Out!");
         }
-
-        
-
-         
     }
 }

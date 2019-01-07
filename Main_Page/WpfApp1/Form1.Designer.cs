@@ -60,6 +60,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.button15 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.articleTextDisplay1 = new Egkyklopaideia.ArticleTextDisplay();
             this.firstCustomControl1 = new Egkyklopaideia.FirstCustomControl();
             this.panel1.SuspendLayout();
@@ -69,6 +70,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.login_btn);
@@ -442,6 +444,16 @@
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(9, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Date";
+            // 
             // articleTextDisplay1
             // 
             this.articleTextDisplay1.Location = new System.Drawing.Point(209, 57);
@@ -488,6 +500,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -528,6 +541,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.WebBrowser webBrowser2;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Label label1;
     }
 }
 
