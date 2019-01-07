@@ -18,7 +18,7 @@ namespace Egkyklopaideia
     public partial class Form1 : Form
     {
         TextToSpeech Reader = new TextToSpeech();
-        DailyArticleCreator testing = new DailyArticleCreator();
+       
         SqlConn conn = new SqlConn();
 
         public static Button UploadButton;
@@ -53,7 +53,23 @@ namespace Egkyklopaideia
             realListBox = listBox1;
             webb1 = webBrowser1;
             backButton = button7;
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
+
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Control && e.KeyCode == Keys.OemOpenBrackets)
+            {
+                TtsRead.PerformClick();
+            }
+            if (e.Control && e.KeyCode == Keys.OemCloseBrackets)
+            {
+                TtsStop.PerformClick();
+            }
+        }
+
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -180,10 +196,6 @@ namespace Egkyklopaideia
 
         }
 
-        private void JsonHandle_Click(object sender, EventArgs e)
-        {
-            testing.LoadJson();
-        }
 
         private void articleTextDisplay1_Load(object sender, EventArgs e)
         {

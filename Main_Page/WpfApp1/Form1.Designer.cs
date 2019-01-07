@@ -35,7 +35,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.login_btn = new System.Windows.Forms.Button();
-            this.JsonHandle = new System.Windows.Forms.Button();
             this.TtsStop = new System.Windows.Forms.Button();
             this.SidePanel = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -60,9 +59,9 @@
             this.button7 = new System.Windows.Forms.Button();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.button15 = new System.Windows.Forms.Button();
+            this.categories1 = new Egkyklopaideia.Categories();
             this.articleTextDisplay1 = new Egkyklopaideia.ArticleTextDisplay();
             this.firstCustomControl1 = new Egkyklopaideia.FirstCustomControl();
-            this.categories1 = new Egkyklopaideia.Categories();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +73,6 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.login_btn);
-            this.panel1.Controls.Add(this.JsonHandle);
             this.panel1.Controls.Add(this.TtsStop);
             this.panel1.Controls.Add(this.SidePanel);
             this.panel1.Controls.Add(this.button3);
@@ -148,16 +146,6 @@
             this.login_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.login_btn.UseVisualStyleBackColor = true;
             this.login_btn.Click += new System.EventHandler(this.button4_Click_1);
-            // 
-            // JsonHandle
-            // 
-            this.JsonHandle.Location = new System.Drawing.Point(35, 479);
-            this.JsonHandle.Name = "JsonHandle";
-            this.JsonHandle.Size = new System.Drawing.Size(75, 23);
-            this.JsonHandle.TabIndex = 10;
-            this.JsonHandle.Text = "Json";
-            this.JsonHandle.UseVisualStyleBackColor = true;
-            this.JsonHandle.Click += new System.EventHandler(this.JsonHandle_Click);
             // 
             // TtsStop
             // 
@@ -440,6 +428,14 @@
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
+            // categories1
+            // 
+            this.categories1.Location = new System.Drawing.Point(209, 57);
+            this.categories1.Name = "categories1";
+            this.categories1.Size = new System.Drawing.Size(817, 460);
+            this.categories1.TabIndex = 18;
+            this.categories1.Visible = false;
+            // 
             // articleTextDisplay1
             // 
             this.articleTextDisplay1.Location = new System.Drawing.Point(209, 57);
@@ -455,14 +451,6 @@
             this.firstCustomControl1.Name = "firstCustomControl1";
             this.firstCustomControl1.Size = new System.Drawing.Size(817, 520);
             this.firstCustomControl1.TabIndex = 5;
-            // 
-            // categories1
-            // 
-            this.categories1.Location = new System.Drawing.Point(209, 57);
-            this.categories1.Name = "categories1";
-            this.categories1.Size = new System.Drawing.Size(817, 460);
-            this.categories1.TabIndex = 18;
-            this.categories1.Visible = false;
             // 
             // Form1
             // 
@@ -519,7 +507,6 @@
         private FirstCustomControl firstCustomControl1;
         private System.Windows.Forms.Button TtsRead;
         private System.Windows.Forms.Button TtsStop;
-        private System.Windows.Forms.Button JsonHandle;
         private ArticleTextDisplay articleTextDisplay1;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button login_btn;

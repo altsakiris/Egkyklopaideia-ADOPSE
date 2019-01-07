@@ -110,7 +110,6 @@
       <DependentUpon>registerform.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlConn.cs" />
-    <Compile Include="DailyArticleCreator.cs" />
     <Compile Include="FirstCustomControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

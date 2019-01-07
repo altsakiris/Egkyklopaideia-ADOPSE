@@ -51,7 +51,7 @@
             this.webBrowser1.ScriptErrorsSuppressed = true;
             this.webBrowser1.Size = new System.Drawing.Size(817, 406);
             this.webBrowser1.TabIndex = 1;
-            this.webBrowser1.Url = new System.Uri("https://users.it.teithe.gr/~it154474/article.html", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("https://users.it.teithe.gr/~it154474/American_English.html", System.UriKind.Absolute);
             // 
             // ArticleTextDisplay
             // 
