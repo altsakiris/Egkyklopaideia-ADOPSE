@@ -45,8 +45,7 @@ namespace Egkyklopaideia
             RegisterButton = button5;
             LoginButton = login_btn;
             SearchButton = button6;
-           
-
+            label1.Text = DateTime.Now.ToShortDateString();
         }
 
 
@@ -62,8 +61,11 @@ namespace Egkyklopaideia
         {
             SidePanel.Height = button2.Height;
             SidePanel.Top = button2.Top;
-            articleTextDisplay1.BringToFront();
-            articleTextDisplay1.Visible = true;
+            button8.Visible = true;
+            button8.BringToFront();
+            webBrowser2.BringToFront();
+            webBrowser2.Visible = true;
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -179,7 +181,7 @@ namespace Egkyklopaideia
 
         private void button11_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.WebBrowser article = articleTextDisplay1.get();
+            System.Windows.Forms.WebBrowser article = webBrowser2;
             string article2 = article.Document.Body.InnerText;
             Clipboard.SetText(article2);
             var form = new Form3();
@@ -216,7 +218,7 @@ namespace Egkyklopaideia
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "Text File|*.txt|Html File|*.html";
             saveFileDialog1.Title = "Save an Image File";
-            System.Windows.Forms.WebBrowser article = articleTextDisplay1.get();
+            System.Windows.Forms.WebBrowser article = webBrowser2;
             string article2 = article.Document.Body.InnerText;
             saveFileDialog1.ShowDialog();
 
@@ -252,7 +254,7 @@ namespace Egkyklopaideia
         {
 
             PrintDialog printdialog1 = new PrintDialog();
-            System.Windows.Forms.WebBrowser article = articleTextDisplay1.get();
+            System.Windows.Forms.WebBrowser article = webBrowser2;
 
             //new PrintingExample(article.Document.Body.InnerText);
 
@@ -330,8 +332,9 @@ namespace Egkyklopaideia
             MessageBox.Show("Succesfully Logged-Out!");
         }
 
-        
+        private void webBrowser2_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
 
-         
+        }
     }
 }
