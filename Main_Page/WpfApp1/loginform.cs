@@ -19,6 +19,7 @@ namespace Egkyklopaideia
         public static string usernameText;
         public static string passwordText;
         public static bool successLogin = false;
+        public static string loginName;
         public loginform()
         {
             InitializeComponent();
@@ -42,6 +43,7 @@ namespace Egkyklopaideia
                 Form1.LogOutButton.Enabled = true;
                 Form1.RegisterButton.Enabled = false; //auto disable
                 Form1.LoginButton.Enabled = false;
+                Form1.helloWorld.Text = "Welcome, "+loginName+"!";
 
             }
             

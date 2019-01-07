@@ -41,9 +41,9 @@
             this.button14 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.TtsRead = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.TtsRead = new System.Windows.Forms.Button();
             this.downloadArticle_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.button13 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -59,6 +59,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.button15 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.categories1 = new Egkyklopaideia.Categories();
             this.articleTextDisplay1 = new Egkyklopaideia.ArticleTextDisplay();
             this.firstCustomControl1 = new Egkyklopaideia.FirstCustomControl();
@@ -69,6 +70,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
@@ -233,6 +235,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // TtsRead
+            // 
+            this.TtsRead.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TtsRead.BackgroundImage")));
+            this.TtsRead.FlatAppearance.BorderSize = 0;
+            this.TtsRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TtsRead.Location = new System.Drawing.Point(35, 495);
+            this.TtsRead.Name = "TtsRead";
+            this.TtsRead.Size = new System.Drawing.Size(32, 40);
+            this.TtsRead.TabIndex = 8;
+            this.TtsRead.UseVisualStyleBackColor = true;
+            this.TtsRead.Visible = false;
+            this.TtsRead.Click += new System.EventHandler(this.TtsRead_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Navy;
@@ -251,19 +266,6 @@
             this.label4.Size = new System.Drawing.Size(371, 37);
             this.label4.TabIndex = 3;
             this.label4.Text = "Εγκυκλοπαίδεια ΤΕΙΘΕ";
-            // 
-            // TtsRead
-            // 
-            this.TtsRead.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TtsRead.BackgroundImage")));
-            this.TtsRead.FlatAppearance.BorderSize = 0;
-            this.TtsRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TtsRead.Location = new System.Drawing.Point(35, 495);
-            this.TtsRead.Name = "TtsRead";
-            this.TtsRead.Size = new System.Drawing.Size(32, 40);
-            this.TtsRead.TabIndex = 8;
-            this.TtsRead.UseVisualStyleBackColor = true;
-            this.TtsRead.Visible = false;
-            this.TtsRead.Click += new System.EventHandler(this.TtsRead_Click);
             // 
             // button13
             // 
@@ -432,6 +434,16 @@
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(9, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 19;
+            // 
             // categories1
             // 
             this.categories1.Location = new System.Drawing.Point(209, 57);
@@ -526,6 +538,7 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Label label1;
         private Categories categories1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

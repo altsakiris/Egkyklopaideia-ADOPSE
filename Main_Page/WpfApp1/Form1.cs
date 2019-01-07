@@ -36,6 +36,7 @@ namespace Egkyklopaideia
         public static string openArticleTitle;
         public static WebBrowser webb1;
         public static Button backButton;
+        public static Label helloWorld;
 
         public Form1()
         {
@@ -55,7 +56,7 @@ namespace Egkyklopaideia
             backButton = button7;
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
-
+            helloWorld = label2;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -134,6 +135,8 @@ namespace Egkyklopaideia
                 SelectedArticle = item;
                 webBrowser2.Visible = true;
                 webBrowser2.BringToFront();
+                TtsRead.Visible = true;
+                TtsStop.Visible = true;
                 conn.OpenArticle();
                 SidePanel.Height = button2.Height;
                 SidePanel.Top = button2.Top;
@@ -154,6 +157,8 @@ namespace Egkyklopaideia
             SidePanel.Height = button3.Height;
             SidePanel.Top = button3.Top;
             webBrowser2.Visible = false;
+            TtsRead.Visible = false;
+            TtsStop.Visible = false;
         }
 
 
@@ -209,38 +214,48 @@ namespace Egkyklopaideia
         }
         private void button8_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "Text File|*.txt|Html File|*.html";
-            saveFileDialog1.Title = "Save an Image File";
-            System.Windows.Forms.WebBrowser article = webBrowser2;
-            string article2 = article.Document.Body.InnerText;
-            saveFileDialog1.ShowDialog();
-
-            if (saveFileDialog1.FileName != "")
+            try
             {
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+
+                string article2;
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "Text File|*.txt|Html File|*.html";
+                saveFileDialog1.Title = "Save an Image File";
+                System.Windows.Forms.WebBrowser article = webBrowser2;
+
+                article2 = article.Document.Body.InnerText;
+
+                saveFileDialog1.ShowDialog();
+
+                if (saveFileDialog1.FileName != "")
                 {
-                    switch (saveFileDialog1.FilterIndex)
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                     {
-                        case 1:
-                            System.IO.File.WriteAllText(saveFileDialog1.FileName, article2);
-                            break;
+                        switch (saveFileDialog1.FilterIndex)
+                        {
+                            case 1:
+                                System.IO.File.WriteAllText(saveFileDialog1.FileName, article2);
+                                break;
 
-                        case 2:
-                            System.IO.File.WriteAllText(saveFileDialog1.FileName, article2);
-                            break;
+                            case 2:
+                                System.IO.File.WriteAllText(saveFileDialog1.FileName, article2);
+                                break;
 
-                        case 3:
+                            case 3:
 
-                            System.IO.File.WriteAllText(saveFileDialog1.FileName, article2);
-                            break;
+                                System.IO.File.WriteAllText(saveFileDialog1.FileName, article2);
+                                break;
 
-                        case 4:
-                            System.IO.File.WriteAllText(saveFileDialog1.FileName, article2);
-                            break;
+                            case 4:
+                                System.IO.File.WriteAllText(saveFileDialog1.FileName, article2);
+                                break;
+                        }
                     }
-                }
 
+                }
+            }catch (Exception)
+            {
+                MessageBox.Show("No Article Selected!..");
             }
         }
 
@@ -319,6 +334,7 @@ namespace Egkyklopaideia
 
         private void button4_Click_2(object sender, EventArgs e)
         {
+            label2.Text = "";
             button9.Enabled = false; // me to log out ta ksanakruvw
             button4.Enabled = false;
             button5.Enabled = true; //profanes
