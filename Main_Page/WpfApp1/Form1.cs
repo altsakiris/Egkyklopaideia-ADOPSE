@@ -31,6 +31,7 @@ namespace Egkyklopaideia
         public static ListBox resultView;
         public static ListBox realListBox;
         public static string SelectedArticle;
+        public static string linkForTts;
         public static string openArticleText;
         public static string openArticleTitle;
         public static WebBrowser webb1;
@@ -166,7 +167,7 @@ namespace Egkyklopaideia
 
         private void TtsRead_Click(object sender, EventArgs e)
         {
-            Reader.TtsRead("https://users.it.teithe.gr/~it154474/American_English.html");
+            Reader.TtsRead(linkForTts);
         }
 
         private void TtsStop_Click(object sender, EventArgs e)

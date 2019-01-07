@@ -276,11 +276,13 @@ namespace Egkyklopaideia
             }
             this.CloseConnection();
         }
+
          
         public void OpenArticle()
         {
             string result = Form1.SelectedArticle;
-            string query = "SELECT Article From Articles WHERE Title =@inputTitle";
+
+            string query = "SELECT Article,Link From Articles WHERE Title =@inputTitle";
 
             if (this.OpenConnection() == true)
             {
@@ -300,6 +302,7 @@ namespace Egkyklopaideia
                         while (reader.Read())
                         {
                             Form1.openArticleText= (reader["Article"].ToString());
+                            Form1.linkForTts = reader["Link"].ToString();
                         }
                     }
 
