@@ -208,6 +208,7 @@ namespace Egkyklopaideia
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Successful Login!");
                     loginform.successLogin = true;
+                    loginform.loginName = nameVal;
                 }
 
                 this.CloseConnection();
