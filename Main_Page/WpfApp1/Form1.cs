@@ -88,6 +88,8 @@ namespace Egkyklopaideia
             button8.BringToFront();
             webBrowser2.BringToFront();
             webBrowser2.Visible = true;
+            TtsRead.Visible=true;
+            TtsStop.Visible=true;
             
         }
 
@@ -98,7 +100,8 @@ namespace Egkyklopaideia
             webBrowser2.Visible = false;
             categories1.Visible = true;
             categories1.BringToFront();
-            
+            TtsRead.Visible = false;
+            TtsStop.Visible = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -132,7 +135,8 @@ namespace Egkyklopaideia
                 webBrowser2.Visible = true;
                 webBrowser2.BringToFront();
                 conn.OpenArticle();
-
+                SidePanel.Height = button2.Height;
+                SidePanel.Top = button2.Top;
                 webBrowser2.DocumentText = openArticleText;
                 button15.BringToFront();
             }
@@ -147,6 +151,8 @@ namespace Egkyklopaideia
         {
             listBox1.BringToFront();
             button15.SendToBack();
+            SidePanel.Height = button3.Height;
+            SidePanel.Top = button3.Top;
             webBrowser2.Visible = false;
         }
 
@@ -174,8 +180,8 @@ namespace Egkyklopaideia
         private void button11_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.WebBrowser article = webBrowser2;
-            string article2 = article.Document.Body.InnerText;
-            Clipboard.SetText(article2);
+            string article2 = article.Document.Title.ToString();
+            Clipboard.SetText("Take a look at this article I found \n"+article2+" : "+linkForTts );
             var form = new Form3();
             form.Show(this);
 

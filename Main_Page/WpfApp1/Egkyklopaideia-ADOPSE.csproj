@@ -215,12 +215,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\buttonAboutClose.Image.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-download-25.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Icon1.ico" />
     <Content Include="Resources\System.ComponentModel.DataAnnotations.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

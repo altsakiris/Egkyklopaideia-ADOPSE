@@ -79,6 +79,7 @@
             this.panel1.Controls.Add(this.button14);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.TtsRead);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -149,12 +150,13 @@
             // 
             // TtsStop
             // 
-            this.TtsStop.Location = new System.Drawing.Point(116, 508);
+            this.TtsStop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TtsStop.BackgroundImage")));
+            this.TtsStop.Location = new System.Drawing.Point(84, 499);
             this.TtsStop.Name = "TtsStop";
-            this.TtsStop.Size = new System.Drawing.Size(75, 23);
+            this.TtsStop.Size = new System.Drawing.Size(32, 32);
             this.TtsStop.TabIndex = 9;
-            this.TtsStop.Text = "Stop";
             this.TtsStop.UseVisualStyleBackColor = true;
+            this.TtsStop.Visible = false;
             this.TtsStop.Click += new System.EventHandler(this.TtsStop_Click);
             // 
             // SidePanel
@@ -252,13 +254,15 @@
             // 
             // TtsRead
             // 
+            this.TtsRead.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TtsRead.BackgroundImage")));
+            this.TtsRead.FlatAppearance.BorderSize = 0;
             this.TtsRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TtsRead.Location = new System.Drawing.Point(35, 508);
+            this.TtsRead.Location = new System.Drawing.Point(35, 495);
             this.TtsRead.Name = "TtsRead";
-            this.TtsRead.Size = new System.Drawing.Size(75, 23);
+            this.TtsRead.Size = new System.Drawing.Size(32, 40);
             this.TtsRead.TabIndex = 8;
-            this.TtsRead.Text = "Play";
             this.TtsRead.UseVisualStyleBackColor = true;
+            this.TtsRead.Visible = false;
             this.TtsRead.Click += new System.EventHandler(this.TtsRead_Click);
             // 
             // button13
@@ -467,7 +471,6 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.articleTextDisplay1);
             this.Controls.Add(this.firstCustomControl1);
-            this.Controls.Add(this.TtsRead);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
