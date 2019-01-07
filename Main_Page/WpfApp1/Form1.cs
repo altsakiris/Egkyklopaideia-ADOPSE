@@ -332,9 +332,11 @@ namespace Egkyklopaideia
             MessageBox.Show("Succesfully Logged-Out!");
         }
 
+
         private void webBrowser2_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
 
         }
+
     }
 }
