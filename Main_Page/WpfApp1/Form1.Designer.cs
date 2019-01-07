@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.login_btn = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button12 = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
@@ -60,9 +60,9 @@
             this.button7 = new System.Windows.Forms.Button();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.button15 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.articleTextDisplay1 = new Egkyklopaideia.ArticleTextDisplay();
             this.firstCustomControl1 = new Egkyklopaideia.FirstCustomControl();
+            this.categories1 = new Egkyklopaideia.Categories();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +86,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(209, 583);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(9, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Date";
             // 
             // button5
             // 
@@ -366,21 +376,6 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Sports",
-            "Science",
-            "Tech",
-            "Music",
-            "Culture"});
-            this.comboBox1.Location = new System.Drawing.Point(647, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(62, 21);
-            this.comboBox1.TabIndex = 12;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // button12
             // 
             this.button12.FlatAppearance.BorderSize = 0;
@@ -444,16 +439,6 @@
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(9, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Date";
-            // 
             // articleTextDisplay1
             // 
             this.articleTextDisplay1.Location = new System.Drawing.Point(209, 57);
@@ -470,17 +455,25 @@
             this.firstCustomControl1.Size = new System.Drawing.Size(817, 520);
             this.firstCustomControl1.TabIndex = 5;
             // 
+            // categories1
+            // 
+            this.categories1.Location = new System.Drawing.Point(209, 57);
+            this.categories1.Name = "categories1";
+            this.categories1.Size = new System.Drawing.Size(817, 460);
+            this.categories1.TabIndex = 18;
+            this.categories1.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 583);
+            this.Controls.Add(this.categories1);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.webBrowser2);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.webBrowser1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.articleTextDisplay1);
@@ -534,7 +527,6 @@
         private System.Windows.Forms.ToolTip downloadArticle_tooltip;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.ListBox listBox1;
@@ -542,6 +534,7 @@
         private System.Windows.Forms.WebBrowser webBrowser2;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Label label1;
+        private Categories categories1;
     }
 }
 

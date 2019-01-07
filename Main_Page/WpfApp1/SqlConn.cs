@@ -258,7 +258,7 @@ namespace Egkyklopaideia
         public void CategorySearch()
         {
 
-            string categorySearch = Form1.SelectedIndex;
+            string categorySearch = Categories.categorySearched;
  
             string query = "SELECT Title From Articles Where Category =@searchCat";
 
@@ -270,7 +270,7 @@ namespace Egkyklopaideia
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Form1.resultView.Items.Add(reader["Title"].ToString());
+                    Categories.catResultView.Items.Add(reader["Title"].ToString());
 
                 }
             }

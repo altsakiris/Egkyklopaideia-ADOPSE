@@ -29,9 +29,12 @@ namespace Egkyklopaideia
         public static string SearchText;
         public static string SelectedIndex;
         public static ListBox resultView;
+        public static ListBox realListBox;
         public static string SelectedArticle;
         public static string openArticleText;
         public static string openArticleTitle;
+        public static WebBrowser webb1;
+        public static Button backButton;
 
         public Form1()
         {
@@ -46,6 +49,9 @@ namespace Egkyklopaideia
             LoginButton = login_btn;
             SearchButton = button6;
             label1.Text = DateTime.Now.ToShortDateString();
+            realListBox = listBox1;
+            webb1 = webBrowser1;
+            backButton = button7;
         }
 
 
@@ -72,10 +78,15 @@ namespace Egkyklopaideia
         {
             SidePanel.Height = button3.Height;
             SidePanel.Top = button3.Top;
+            webBrowser2.Visible = false;
+            categories1.Visible = true;
+            categories1.BringToFront();
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+           
             listBox1.Items.Clear();
             webBrowser1.Visible = true;
             webBrowser1.BringToFront();
@@ -112,44 +123,8 @@ namespace Egkyklopaideia
              
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            listBox1.Items.Clear();
-            webBrowser1.Visible = true;
-            webBrowser1.BringToFront();
-            articleTextDisplay1.Visible = false;
-            listBox1.BringToFront();
-            button7.BringToFront();
-            resultView = listBox1;
-            int selectedIndexCat = comboBox1.SelectedIndex;
-            if (selectedIndexCat == 0)
-            {
-                SelectedIndex = "Sports";
+        
 
-            }
-            else if (selectedIndexCat == 1)
-            {
-                SelectedIndex = "Science";
-
-            }
-            else if (selectedIndexCat == 2)
-            {
-                SelectedIndex = "Tech";
-
-            }
-            else if (selectedIndexCat == 3)
-            {
-                SelectedIndex = "Music";
-
-            }
-            else if (selectedIndexCat == 4)
-            {
-                SelectedIndex = "Culture";
-
-            }
-            conn.CategorySearch();
-
-        }
 
         private void button15_Click(object sender, EventArgs e)
         {
