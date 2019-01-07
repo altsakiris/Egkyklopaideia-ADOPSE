@@ -38,6 +38,13 @@ namespace Egkyklopaideia
         public static Button backButton;
         public static Label helloWorld;
 
+        //public static string display1;
+        //public static string titleDisplay1;
+        //public static string display2;
+        //public static string titleDisplay2;------------!
+        //public static string display3;
+        //public static string titleDisplay3;
+
         public Form1()
         {
             InitializeComponent();
