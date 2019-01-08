@@ -37,6 +37,8 @@ namespace Egkyklopaideia
         public static WebBrowser webb1;
         public static Button backButton;
         public static Label helloWorld;
+        public static String RTitle;
+        public static String Rbody;
 
         //public static string display1;
         //public static string titleDisplay1;
