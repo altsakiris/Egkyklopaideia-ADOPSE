@@ -89,7 +89,7 @@ namespace Egkyklopaideia
         {
           
             conn.UploadArticle(); //methodo gia upload
-             
+            MessageBox.Show("Uploaded Successfully");
              
 
         }

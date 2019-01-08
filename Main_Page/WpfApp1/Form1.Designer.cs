@@ -102,7 +102,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(9, 17);
+            this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 18;
@@ -163,9 +163,12 @@
             // TtsStop
             // 
             this.TtsStop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TtsStop.BackgroundImage")));
-            this.TtsStop.Location = new System.Drawing.Point(84, 499);
+            this.TtsStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TtsStop.FlatAppearance.BorderSize = 0;
+            this.TtsStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TtsStop.Location = new System.Drawing.Point(164, 553);
             this.TtsStop.Name = "TtsStop";
-            this.TtsStop.Size = new System.Drawing.Size(32, 32);
+            this.TtsStop.Size = new System.Drawing.Size(26, 26);
             this.TtsStop.TabIndex = 9;
             this.TtsStop.UseVisualStyleBackColor = true;
             this.TtsStop.Visible = false;
@@ -248,11 +251,12 @@
             // TtsRead
             // 
             this.TtsRead.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TtsRead.BackgroundImage")));
+            this.TtsRead.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.TtsRead.FlatAppearance.BorderSize = 0;
             this.TtsRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TtsRead.Location = new System.Drawing.Point(35, 495);
+            this.TtsRead.Location = new System.Drawing.Point(132, 553);
             this.TtsRead.Name = "TtsRead";
-            this.TtsRead.Size = new System.Drawing.Size(32, 40);
+            this.TtsRead.Size = new System.Drawing.Size(26, 26);
             this.TtsRead.TabIndex = 8;
             this.TtsRead.UseVisualStyleBackColor = true;
             this.TtsRead.Visible = false;
@@ -270,10 +274,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(215, 17);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(215, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(371, 37);
+            this.label4.Size = new System.Drawing.Size(317, 33);
             this.label4.TabIndex = 3;
             this.label4.Text = "Εγκυκλοπαίδεια ΤΕΙΘΕ";
             // 
@@ -365,7 +369,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(576, 28);
+            this.textBox1.Location = new System.Drawing.Point(575, 28);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(181, 20);
             this.textBox1.TabIndex = 10;
