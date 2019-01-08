@@ -140,7 +140,6 @@
     <Compile Include="HelpPopUp.Designer.cs">
       <DependentUpon>HelpPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="JsonDeserializer.cs" />
     <Compile Include="PrintingExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -151,6 +150,7 @@
       <DependentUpon>AboutPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="SubstringExtensions.cs" />
+    <Compile Include="Summary.cs" />
     <Compile Include="TextToSpeech.cs" />
     <EmbeddedResource Include="Categories.resx">
       <DependentUpon>Categories.cs</DependentUpon>

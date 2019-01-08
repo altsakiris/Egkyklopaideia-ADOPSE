@@ -12,7 +12,6 @@ namespace Egkyklopaideia
 {
     public partial class FirstCustomControl : UserControl
     {
-        //int count = source.Split('/').Length - 1;
         SqlConn conn = new SqlConn();
         List<GroupBox> groupBoxes = new List<GroupBox>();
         List<Label> LabeList = new List<Label>();
@@ -29,29 +28,32 @@ namespace Egkyklopaideia
             ButtonList.Add(button1);
             ButtonList.Add(button2);
             ButtonList.Add(button3);
-            Populate_Main_form();
+            Populate_Main_formAsync();
         }
         
-        private void Populate_Main_form()
+        private async Task Populate_Main_formAsync()
         {
-            int i = 0,c=0,y=0;
+            Summary summary = new Summary();
+            int i = 0;
             foreach (var groupbox in groupBoxes)
             {
-                groupbox.Text = "This is box number " + (i+1);
+                conn.RandomArticle1();
+                groupbox.Text = Form1.RTitle;
+                var bLabel = LabeList.ElementAt(i);
+                await summary.SummaryReturnAsync(Form1.linkForTts);
+                String bod = TruncateLongString(Form1.Rbody,50);
+                bLabel.Text = bod + "...";
                 i++;
             }
-            foreach (var label in LabeList)
-            {
-                label.Text = "Label " + (c + 1);
-                c++;
-            }
-            foreach (var button in ButtonList)
-            {
-                button.Text = "btn" + (y + 1);
-                y++;
-            }
+          
         }
-       
+
+        public string TruncateLongString(string str, int maxLength)
+        {
+            if (string.IsNullOrEmpty(str))
+                return str;
+            return str.Substring(0, Math.Min(str.Length, maxLength));
+        }
 
         private void FirstCustomControl_Load(object sender, EventArgs e)
         {

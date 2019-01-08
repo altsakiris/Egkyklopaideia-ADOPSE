@@ -50,11 +50,6 @@ namespace Egkyklopaideia
             try
             {
                 connection.Open();
-
-
-
-
-
                 return true;
             }
             catch (MySqlException ex)
@@ -317,7 +312,7 @@ namespace Egkyklopaideia
 
         public void RandomArticle1()
         {
-            string query = "SELECT Title,Article FROM Articles ORDER BY RAND() LIMIT 1";
+            string query = "SELECT Title,Link FROM Articles ORDER BY RAND() LIMIT 1";
 
             if(this.OpenConnection() == true)
             {
@@ -326,10 +321,11 @@ namespace Egkyklopaideia
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    // Form1.display = reader["Article"].ToString();
-                    // Form1.titleDisplay = reader["Title"].Tostring();
+                     Form1.RTitle = reader["Title"].ToString();
+                     Form1.linkForTts = reader["Link"].ToString();
                 }
             }
+            this.CloseConnection();
         }
         public void RandomArticle2()
         {
