@@ -362,7 +362,7 @@
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Image = global::Egkyklopaideia.Properties.Resources.icons8_download_25;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(763, 19);
+            this.button8.Location = new System.Drawing.Point(772, 20);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(36, 34);
             this.button8.TabIndex = 4;
@@ -373,14 +373,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(575, 28);
+            this.textBox1.Location = new System.Drawing.Point(538, 28);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 20);
+            this.textBox1.Size = new System.Drawing.Size(171, 20);
             this.textBox1.TabIndex = 10;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(705, 28);
+            this.button6.Location = new System.Drawing.Point(715, 28);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(51, 20);
             this.button6.TabIndex = 11;
