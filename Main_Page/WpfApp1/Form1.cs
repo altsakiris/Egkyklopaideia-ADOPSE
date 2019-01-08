@@ -361,5 +361,11 @@ namespace Egkyklopaideia
         {
 
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            var form = new Help();
+            form.Show(this);
+        }
     }
 }

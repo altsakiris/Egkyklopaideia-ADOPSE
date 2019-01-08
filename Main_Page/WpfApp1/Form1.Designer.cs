@@ -215,6 +215,7 @@
             this.button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.downloadArticle_tooltip.SetToolTip(this.button14, " Βοήθεια");
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button2
             // 

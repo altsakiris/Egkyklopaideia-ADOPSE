@@ -97,6 +97,12 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
     <Compile Include="loginform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,21 +140,9 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="HelpPopUp.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="HelpPopUp.Designer.cs">
-      <DependentUpon>HelpPopUp.cs</DependentUpon>
-    </Compile>
     <Compile Include="PrintingExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AboutPopUp.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AboutPopUp.Designer.cs">
-      <DependentUpon>AboutPopUp.cs</DependentUpon>
-    </Compile>
     <Compile Include="SubstringExtensions.cs" />
     <Compile Include="Summary.cs" />
     <Compile Include="TextToSpeech.cs" />
@@ -170,8 +164,8 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HelpPopUp.resx">
-      <DependentUpon>HelpPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginform.resx">
       <DependentUpon>loginform.cs</DependentUpon>
@@ -186,10 +180,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="AboutPopUp.resx">
-      <DependentUpon>AboutPopUp.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="registerform.resx">
       <DependentUpon>registerform.cs</DependentUpon>
     </EmbeddedResource>
