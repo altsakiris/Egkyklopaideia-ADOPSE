@@ -12,10 +12,13 @@ namespace Egkyklopaideia
 {
     public partial class FirstCustomControl : UserControl
     {
+        TextToSpeech Reader = new TextToSpeech();
         SqlConn conn = new SqlConn();
         List<GroupBox> groupBoxes = new List<GroupBox>();
         List<Label> LabeList = new List<Label>();
         List<Button> ButtonList = new List<Button>();
+        private string openMore,openMore2,openMore3;
+        public static string somethingOpen;
         public FirstCustomControl()
         {
             InitializeComponent();
@@ -37,13 +40,35 @@ namespace Egkyklopaideia
             int i = 0;
             foreach (var groupbox in groupBoxes)
             {
+                 
                 conn.RandomArticle1();
                 groupbox.Text = Form1.RTitle;
                 var bLabel = LabeList.ElementAt(i);
                 await summary.SummaryReturnAsync(Form1.linkForTts);
                 String bod = TruncateLongString(Form1.Rbody,50);
                 bLabel.Text = bod + "...";
+
+                 
+
                 i++;
+
+                if (i == 1)
+                {
+                    openMore = Form1.RTitle;
+
+
+                }
+                else if (i == 2)
+                {
+                    openMore2 = Form1.RTitle;
+
+                }
+                else if (i == 3)
+                {
+
+                    openMore3 = Form1.RTitle;
+                }
+
             }
           
         }
@@ -55,8 +80,40 @@ namespace Egkyklopaideia
             return str.Substring(0, Math.Min(str.Length, maxLength));
         }
 
+ 
+
         private void FirstCustomControl_Load(object sender, EventArgs e)
         {
+
+        }
+
+ 
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            somethingOpen = openMore;
+            Form1.webb2.Visible = true;
+            Form1.webb2.BringToFront();
+            conn.openArticleMainPage();
+            Form1.webb2.DocumentText = Form1.openArticleText;
+           
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            somethingOpen = openMore2;
+            Form1.webb2.Visible = true;
+            Form1.webb2.BringToFront();
+            conn.openArticleMainPage();
+            Form1.webb2.DocumentText = Form1.openArticleText;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            somethingOpen = openMore3;
+            Form1.webb2.Visible = true;
+            Form1.webb2.BringToFront();
+            conn.openArticleMainPage();
+            Form1.webb2.DocumentText = Form1.openArticleText;
 
         }
     }

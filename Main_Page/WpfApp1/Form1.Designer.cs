@@ -375,16 +375,16 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(538, 28);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 20);
+            this.textBox1.Size = new System.Drawing.Size(156, 20);
             this.textBox1.TabIndex = 10;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(715, 28);
+            this.button6.Location = new System.Drawing.Point(693, 28);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(51, 20);
+            this.button6.Size = new System.Drawing.Size(73, 20);
             this.button6.TabIndex = 11;
-            this.button6.Text = "Go";
+            this.button6.Text = "Αναζήτηση";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 

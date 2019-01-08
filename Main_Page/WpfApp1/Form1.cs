@@ -34,18 +34,11 @@ namespace Egkyklopaideia
         public static string linkForTts;
         public static string openArticleText;
         public static string openArticleTitle;
-        public static WebBrowser webb1;
+        public static WebBrowser webb1,webb2;
         public static Button backButton;
         public static Label helloWorld;
         public static String RTitle;
         public static String Rbody;
-
-        //public static string display1;
-        //public static string titleDisplay1;
-        //public static string display2;
-        //public static string titleDisplay2;------------!
-        //public static string display3;
-        //public static string titleDisplay3;
 
         public Form1()
         {
@@ -62,6 +55,7 @@ namespace Egkyklopaideia
             label1.Text = DateTime.Now.ToShortDateString();
             realListBox = listBox1;
             webb1 = webBrowser1;
+            webb2 = webBrowser2;
             backButton = button7;
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
@@ -86,8 +80,11 @@ namespace Egkyklopaideia
         {
             SidePanel.Height = button1.Height;
             SidePanel.Top = button1.Top;
+            TtsRead.Visible = false;
+            TtsStop.Visible = false;
             firstCustomControl1.BringToFront();
             articleTextDisplay1.Visible = false;
+        
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -198,7 +195,6 @@ namespace Egkyklopaideia
             Clipboard.SetText("Take a look at this article I found \n"+article2+" : "+linkForTts );
             var form = new Form3();
             form.Show(this);
-
         }
 
         private void TtsRead_Click(object sender, EventArgs e)

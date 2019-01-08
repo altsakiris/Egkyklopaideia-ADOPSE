@@ -327,37 +327,35 @@ namespace Egkyklopaideia
             }
             this.CloseConnection();
         }
-        public void RandomArticle2()
+      
+        public void openArticleMainPage()
         {
-            string query = "SELECT Title,Article FROM Articles ORDER BY RAND() LIMIT 1";
+
+            string query = "SELECT Article,Link From Articles WHERE Title =@inputTitle";
 
             if (this.OpenConnection() == true)
             {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
 
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                try
                 {
-                    // Form1.display2 = reader["Article"].ToString();
-                    // Form1.titleDisplay2 = reader["Title"].Tostring();
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@inputTitle", FirstCustomControl.somethingOpen);
+
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            Form1.openArticleText = (reader["Article"].ToString());
+                            Form1.linkForTts = reader["Link"].ToString();
+                        }
+
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("??");
                 }
             }
-        }
-        public void RandomArticle3()
-        {
-            string query = "SELECT Title,Article FROM Articles ORDER BY RAND() LIMIT 1";
-
-            if (this.OpenConnection() == true)
-            {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    // Form1.display3 = reader["Article"].ToString();
-                    // Form1.titleDisplay3 = reader["Title"].Tostring();
-                }
-            }
+            this.CloseConnection();
         }
     }
 
