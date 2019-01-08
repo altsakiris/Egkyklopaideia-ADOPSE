@@ -355,5 +355,9 @@ namespace Egkyklopaideia
 
         }
 
+        private void categories1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

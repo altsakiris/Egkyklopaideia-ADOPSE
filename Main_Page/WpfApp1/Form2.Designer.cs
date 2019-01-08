@@ -69,7 +69,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(92, 23);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Cancel";
+            this.button3.Text = "Άκυρο";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -87,7 +87,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(134, 21);
             this.comboBox1.TabIndex = 4;
-            this.comboBox1.Text = "Choose Category";
+            this.comboBox1.Text = "Κατηγορία";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Form2
@@ -101,7 +101,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Name = "Form2";
-            this.Text = "Upload New Article";
+            this.Text = "Ανέβασμα Νέου Λήμματος";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

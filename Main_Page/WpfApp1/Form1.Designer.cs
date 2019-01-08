@@ -170,6 +170,7 @@
             this.TtsStop.Name = "TtsStop";
             this.TtsStop.Size = new System.Drawing.Size(26, 26);
             this.TtsStop.TabIndex = 9;
+            this.downloadArticle_tooltip.SetToolTip(this.TtsStop, "Τερματισμός Ανάγνωσης");
             this.TtsStop.UseVisualStyleBackColor = true;
             this.TtsStop.Visible = false;
             this.TtsStop.Click += new System.EventHandler(this.TtsStop_Click);
@@ -212,6 +213,7 @@
             this.button14.TabIndex = 4;
             this.button14.Text = "?";
             this.button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.downloadArticle_tooltip.SetToolTip(this.button14, " Βοήθεια");
             this.button14.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -226,7 +228,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(197, 54);
             this.button2.TabIndex = 4;
-            this.button2.Text = "   Άρθρο";
+            this.button2.Text = "   Λήμμα";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -258,6 +260,7 @@
             this.TtsRead.Name = "TtsRead";
             this.TtsRead.Size = new System.Drawing.Size(26, 26);
             this.TtsRead.TabIndex = 8;
+            this.downloadArticle_tooltip.SetToolTip(this.TtsRead, "Ανάγνωση Λήμματος");
             this.TtsRead.UseVisualStyleBackColor = true;
             this.TtsRead.Visible = false;
             this.TtsRead.Click += new System.EventHandler(this.TtsRead_Click);
@@ -446,17 +449,18 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(133, 23);
             this.button15.TabIndex = 17;
-            this.button15.Text = "Back";
+            this.button15.Text = "Πίσω";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // categories1
             // 
-            this.categories1.Location = new System.Drawing.Point(209, 57);
+            this.categories1.Location = new System.Drawing.Point(209, 54);
             this.categories1.Name = "categories1";
-            this.categories1.Size = new System.Drawing.Size(817, 460);
+            this.categories1.Size = new System.Drawing.Size(817, 497);
             this.categories1.TabIndex = 18;
             this.categories1.Visible = false;
+            this.categories1.Load += new System.EventHandler(this.categories1_Load);
             // 
             // articleTextDisplay1
             // 
