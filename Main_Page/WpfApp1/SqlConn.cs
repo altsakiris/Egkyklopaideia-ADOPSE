@@ -317,12 +317,14 @@ namespace Egkyklopaideia
             if(this.OpenConnection() == true)
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
-
+                String ret = "";
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                     Form1.RTitle = reader["Title"].ToString();
-                     Form1.linkForTts = reader["Link"].ToString();
+                    ret = reader["Title"].ToString();
+                    ret.Replace("_", " ");
+                    Form1.RTitle = ret;
+                    Form1.linkForTts = reader["Link"].ToString();
                 }
             }
             this.CloseConnection();

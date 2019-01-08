@@ -38,11 +38,32 @@ namespace Egkyklopaideia
         {
             Summary summary = new Summary();
             int i = 0;
+            String[] titArray = new string[3];
+           
             foreach (var groupbox in groupBoxes)
             {
-                 
+                Boolean flag1 = true;
                 conn.RandomArticle1();
-                groupbox.Text = Form1.RTitle;
+                
+               
+                if (!titArray[i].Equals(Form1.RTitle))
+                {
+                    titArray[i] = Form1.RTitle;
+                    groupbox.Text = Form1.RTitle;
+                }
+                else
+                {
+                    while (flag1)
+                    {
+                        conn.RandomArticle1();
+                        if (titArray[i].Equals(Form1.RTitle))
+                        {
+                            flag1 = false;
+                            groupbox.Text = Form1.RTitle;
+                        }
+                    }
+                }
+                
                 var bLabel = LabeList.ElementAt(i);
                 await summary.SummaryReturnAsync(Form1.linkForTts);
                 String bod = TruncateLongString(Form1.Rbody,50);
