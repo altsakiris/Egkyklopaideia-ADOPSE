@@ -53,7 +53,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -310,7 +309,7 @@
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(889, 19);
+            this.button11.Location = new System.Drawing.Point(921, 19);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(32, 35);
             this.button11.TabIndex = 4;
@@ -327,7 +326,7 @@
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(847, 19);
+            this.button10.Location = new System.Drawing.Point(879, 19);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(36, 34);
             this.button10.TabIndex = 4;
@@ -345,7 +344,7 @@
             this.button9.ForeColor = System.Drawing.Color.White;
             this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(805, 19);
+            this.button9.Location = new System.Drawing.Point(823, 19);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(36, 34);
             this.button9.TabIndex = 4;
@@ -362,7 +361,7 @@
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Image = global::Egkyklopaideia.Properties.Resources.icons8_download_25;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(772, 20);
+            this.button8.Location = new System.Drawing.Point(781, 19);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(36, 34);
             this.button8.TabIndex = 4;
@@ -380,28 +379,13 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(693, 28);
+            this.button6.Location = new System.Drawing.Point(700, 28);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(73, 20);
             this.button6.TabIndex = 11;
             this.button6.Text = "Αναζήτηση";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button12
-            // 
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(939, 19);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(32, 35);
-            this.button12.TabIndex = 4;
-            this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button12.UseVisualStyleBackColor = true;
             // 
             // webBrowser1
             // 
@@ -496,7 +480,6 @@
             this.Controls.Add(this.firstCustomControl1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button13);
-            this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
@@ -528,7 +511,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private FirstCustomControl firstCustomControl1;
         private System.Windows.Forms.Button TtsRead;
