@@ -95,8 +95,20 @@ namespace Egkyklopaideia
             button8.BringToFront();
             webBrowser2.BringToFront();
             webBrowser2.Visible = true;
-            TtsRead.Visible=true;
-            TtsStop.Visible=true;
+            if (webBrowser2.DocumentText == "")
+            {
+                label3.BringToFront();
+                label3.Visible = true;
+                label3.Text = "Δεν έχετε επιλέξει λήμμα για προβολή!";
+                TtsRead.Visible = false;
+                TtsStop.Visible = false;
+            }
+            else
+            {
+                TtsRead.Visible = true;
+                TtsStop.Visible = true;
+            }
+             
             
         }
 
@@ -122,8 +134,14 @@ namespace Egkyklopaideia
             button7.BringToFront();
             SearchText = textBox1.Text;
             resultView = listBox1;
-            conn.Search();
  
+            conn.Search();
+
+            if (resultView.Items.Count==0)
+            {
+                MessageBox.Show("Δεν βρέθηκε λήμμα!");
+            }
+
 
         }
 
@@ -133,7 +151,7 @@ namespace Egkyklopaideia
         {
             if (listBox1.SelectedIndex < 0)
             {
-                MessageBox.Show("No Articles Selected");
+                MessageBox.Show("Δεν έχετε επιλέξει λήμμα");
             }
             else
             {
@@ -193,7 +211,7 @@ namespace Egkyklopaideia
 
             if (webBrowser2.DocumentText == "")
             {
-                MessageBox.Show("No Article Selected!..");
+                MessageBox.Show("Δεν έχετε επιλέξει λήμμα!..");
             }
             else
             {
@@ -273,7 +291,7 @@ namespace Egkyklopaideia
                 }
             }catch (Exception)
             {
-                MessageBox.Show("No Article Selected!..");
+                MessageBox.Show("Δεν έχετε επιλέξει λήμμα!..");
             }
         }
 
@@ -282,7 +300,7 @@ namespace Egkyklopaideia
 
             if(webBrowser2.DocumentText == "")
             {
-                MessageBox.Show("No Article Selected!..");
+                MessageBox.Show("Δεν έχετε επιλέξει λήμμα!..");
             }
             else
             {
@@ -366,7 +384,7 @@ namespace Egkyklopaideia
             button4.Enabled = false;
             button5.Enabled = true; //profanes
             login_btn.Enabled = true;
-            MessageBox.Show("Succesfully Logged-Out!");
+            MessageBox.Show("Επιτυχής αποσύνδεση!");
         }
 
 

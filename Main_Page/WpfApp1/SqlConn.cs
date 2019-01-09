@@ -150,24 +150,24 @@ namespace Egkyklopaideia
 
                 if (NameCount > 0)
                 {
-                    MessageBox.Show("Name Already Exists!..");  //profanes
+                    MessageBox.Show("Το όνομα υπάρχει ήδη!..");  //profanes
 
                 }
                 else if (EmailCount > 0)
 
                 {
-                    MessageBox.Show("This Email Is Already Being Used!..");
+                    MessageBox.Show("Το εμαιλ χρησιμοποιείται!..");
                 }
 
                 else if (!new EmailAddressAttribute().IsValid(emailVal)) //filter gia swsto email
                 {
-                    MessageBox.Show("Wrong Email Input!..");
+                    MessageBox.Show("Λανθασμένη μορφή εμαιλ!..");
                 }
                 else
                 {
                     //Execute command
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Succesfully Created!");
+                    MessageBox.Show("Επιτυχής Δημιουργία Λογαριασμού!");
                     registerform.success = true;
 
                 }
@@ -196,12 +196,12 @@ namespace Egkyklopaideia
 
                 if (count != 1)
                 {
-                    MessageBox.Show("Wrong Name Or Password!..");
+                    MessageBox.Show("Λανθασμένη είσοδος όνοματος/κωδικού!..");
                 }
                 else
                 {
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Successful Login!");
+                    MessageBox.Show("Επιτυχής Σύνδεση!");
                     loginform.successLogin = true;
                     loginform.loginName = nameVal;
                 }
@@ -226,7 +226,7 @@ namespace Egkyklopaideia
 
                     if (searchName == "")
                     {
-                        MessageBox.Show("No Search Query");
+                        MessageBox.Show("Δεν έχετε εισάγει κάτι για αναζήτηση");
                     }
                     else
                     {
@@ -236,7 +236,9 @@ namespace Egkyklopaideia
                         {
                             Form1.resultView.Items.Add(reader["Title"].ToString());
                         }
+
                     }
+
 
  
                 }
@@ -290,7 +292,7 @@ namespace Egkyklopaideia
 
                     if (result == null)
                     {
-                        MessageBox.Show("No Article Selected");
+                        MessageBox.Show("Δεν έχετε επιλέξει λήμμα");
                     }
                     else
                     {

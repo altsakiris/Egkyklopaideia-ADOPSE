@@ -59,6 +59,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.button15 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.categories1 = new Egkyklopaideia.Categories();
             this.articleTextDisplay1 = new Egkyklopaideia.ArticleTextDisplay();
             this.firstCustomControl1 = new Egkyklopaideia.FirstCustomControl();
@@ -413,7 +414,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(162, 23);
             this.button7.TabIndex = 15;
-            this.button7.Text = "Open Article";
+            this.button7.Text = "Άνοιγμα Λήμματος";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -437,6 +438,18 @@
             this.button15.Text = "Πίσω";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(479, 167);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 21);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "label3";
+            this.label3.Visible = false;
             // 
             // categories1
             // 
@@ -468,6 +481,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 583);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.categories1);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.webBrowser2);
@@ -532,6 +546,7 @@
         private System.Windows.Forms.Label label1;
         private Categories categories1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
