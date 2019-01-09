@@ -190,13 +190,24 @@ namespace Egkyklopaideia
 
         private void button11_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.WebBrowser article = webBrowser2;
-            if (article.Document != null) {
-                string article2 = article.Document.Title.ToString();
-                Clipboard.SetText("Take a look at this article I found \n" + article2 + " : " + linkForTts);
-                var form = new Form3();
-                form.Show(this);
+
+            if (webBrowser2.DocumentText == "")
+            {
+                MessageBox.Show("No Article Selected!..");
             }
+            else
+            {
+                System.Windows.Forms.WebBrowser article = webBrowser2;
+                if (article.Document != null)
+                {
+                    string article2 = article.Document.Title.ToString();
+                    Clipboard.SetText("Take a look at this article I found \n" + article2 + " : " + linkForTts);
+                    var form = new Form3();
+                    form.Show(this);
+                }
+            }
+
+            
         }
 
         private void TtsRead_Click(object sender, EventArgs e)
@@ -269,15 +280,24 @@ namespace Egkyklopaideia
         private void button10_Click(object sender, EventArgs e)
         {
 
-            PrintDialog printdialog1 = new PrintDialog();
-            System.Windows.Forms.WebBrowser article = webBrowser2;
-
-            //new PrintingExample(article.Document.Body.InnerText);
-
-            if (printdialog1.ShowDialog() == DialogResult.OK)
+            if(webBrowser2.DocumentText == "")
             {
-                article.Print();
+                MessageBox.Show("No Article Selected!..");
             }
+            else
+            {
+                PrintDialog printdialog1 = new PrintDialog();
+                System.Windows.Forms.WebBrowser article = webBrowser2;
+
+                //new PrintingExample(article.Document.Body.InnerText);
+
+                if (printdialog1.ShowDialog() == DialogResult.OK)
+                {
+                    article.Print();
+                }
+            }
+
+             
         }
 
         /*protected void ThePrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs ev, System.Windows.Forms.WebBrowser article)
