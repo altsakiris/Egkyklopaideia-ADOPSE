@@ -191,10 +191,12 @@ namespace Egkyklopaideia
         private void button11_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.WebBrowser article = webBrowser2;
-            string article2 = article.Document.Title.ToString();
-            Clipboard.SetText("Take a look at this article I found \n"+article2+" : "+linkForTts );
-            var form = new Form3();
-            form.Show(this);
+            if (article.Document != null) {
+                string article2 = article.Document.Title.ToString();
+                Clipboard.SetText("Take a look at this article I found \n" + article2 + " : " + linkForTts);
+                var form = new Form3();
+                form.Show(this);
+            }
         }
 
         private void TtsRead_Click(object sender, EventArgs e)

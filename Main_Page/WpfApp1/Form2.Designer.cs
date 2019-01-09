@@ -83,7 +83,7 @@
             "Music",
             "Tech",
             "Culture"});
-            this.comboBox1.Location = new System.Drawing.Point(425, 48);
+            this.comboBox1.Location = new System.Drawing.Point(406, 48);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(134, 21);
             this.comboBox1.TabIndex = 4;
@@ -94,12 +94,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 250);
+            this.ClientSize = new System.Drawing.Size(571, 250);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(587, 289);
+            this.MinimumSize = new System.Drawing.Size(587, 289);
             this.Name = "Form2";
             this.Text = "Ανέβασμα Νέου Λήμματος";
             this.Load += new System.EventHandler(this.Form2_Load);

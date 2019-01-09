@@ -252,6 +252,9 @@
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelAboutName);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(480, 408);
+            this.MinimumSize = new System.Drawing.Size(480, 408);
             this.Name = "Help";
             this.Text = "Help";
             this.ResumeLayout(false);
