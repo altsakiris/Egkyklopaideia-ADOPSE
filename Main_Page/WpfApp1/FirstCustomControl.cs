@@ -39,31 +39,28 @@ namespace Egkyklopaideia
             Summary summary = new Summary();
             int i = 0;
             String[] titArray = new string[3];
-           
+            string titl = "";
+
+
             foreach (var groupbox in groupBoxes)
             {
-                Boolean flag1 = true;
+                Boolean flag1 = false;
                 conn.RandomArticle1();
-                
-               
-                if (!titArray[i].Equals(Form1.RTitle))
+                titArray[i] = Form1.RTitle;
+                if (titArray.Contains(Form1.RTitle))
                 {
-                    titArray[i] = Form1.RTitle;
-                    groupbox.Text = Form1.RTitle;
+                    flag1 = true;
                 }
-                else
+                while (flag1)
                 {
-                    while (flag1)
+                    conn.RandomArticle1();
+                    if (!titArray.Contains(Form1.RTitle))
                     {
-                        conn.RandomArticle1();
-                        if (titArray[i].Equals(Form1.RTitle))
-                        {
-                            flag1 = false;
-                            groupbox.Text = Form1.RTitle;
-                        }
+                        titArray[i] = Form1.RTitle;
+                        flag1 = false;
                     }
                 }
-                
+                groupbox.Text = Form1.RTitle;
                 var bLabel = LabeList.ElementAt(i);
                 await summary.SummaryReturnAsync(Form1.linkForTts);
                 String bod = TruncateLongString(Form1.Rbody,50);
@@ -91,7 +88,13 @@ namespace Egkyklopaideia
                 }
 
             }
-          
+            foreach(var Rt in groupBoxes)
+            {
+
+                titl = Rt.Text.ToString();
+                titl.Replace("_"," ");
+                Rt.Text = titl;
+            }
         }
 
         public string TruncateLongString(string str, int maxLength)
